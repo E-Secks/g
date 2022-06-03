@@ -1,0 +1,66 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <link rel="stylesheet" href="/styles/loading-wackamatch.73c85c04.css" media="all">
+
+    <script type="text/javascript">
+        window.onload = function() {
+            window.parent.dispatchEvent(new Event('loadingIframeLoaded'));
+        };
+        window.addEventListener('mousemove', function(e) {
+            window.parent.dispatchEvent(new Event('iframeActivity'));
+        });
+        window.addEventListener('click', function(e) {
+            window.parent.dispatchEvent(new Event('iframeActivity'));
+        });
+        window.addEventListener('keypress', function(e) {
+            window.parent.dispatchEvent(new Event('iframeActivity'));
+        });
+
+        try {
+            var els = window.location.hostname.split(".");
+            var domain = (els.length >= 3 ? (els[els.length - 2] + ".") : "") + els[els.length - 1];
+
+            document.domain = domain;
+        } catch (e) {
+            console.log(e);
+        }
+    </script>
+
+    <script src="/scripts/loading-wackamatch.e9b505f6.js"></script>
+</head>
+
+<body>
+    <div class="whackamatch">
+
+        <div id="matchNumber">
+        </div>
+
+        <table id="tiles">
+            <!-- Tiles added dynamically -->
+        </table>
+
+        <audio id="correct1">
+            <source src="/audio/Correct1.m4a" type="audio/mpeg" />
+        </audio>
+        <audio id="correct2">
+            <source src="/audio/Correct2.m4a" type="audio/mpeg" />
+        </audio>
+        <audio id="wrong1">
+            <source src="/audio/Incorrect.m4a" type="audio/mpeg" />
+        </audio>
+        <audio id="show1">
+            <source src="/audio/Show1.m4a" type="audio/mpeg" />
+        </audio>
+        <audio id="show2">
+            <source src="/audio/Show2.m4a" type="audio/mpeg" />
+        </audio>
+        <audio id="show3">
+            <source src="/audio/Show3.m4a" type="audio/mpeg" />
+        </audio>
+    </div>
+</body>
+
+</html>
